@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiyomi Transindo - Premium Bus Service</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyan: {
+                            400: '#22D3EE',
+                            500: '#00F0FF', // Electric Cyan
+                        },
+                        navy: {
+                            900: '#0F172A', // Deep Space
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        orbitron: ['Orbitron', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(180deg, #E2E8F0 0%, #DBEAFE 40%, #ffffff 100%)',
+                        'space-gradient': 'linear-gradient(to bottom, #0F172A, #020617)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities for Glassmorphism & Details */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #22D3EE;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <div class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4">
+        <nav class="relative bg-white/90 backdrop-blur-md shadow-lg rounded-full px-8 py-3 w-full max-w-6xl flex justify-between items-center transition-all duration-300">
+            
+            <div class="flex items-center gap-3">
+                <img itemprop="image" width="25" height="25" src="https://i.ibb.co.com/Q7Wctf7L/logo-kiyomi-trans-transparent.png" alt="Kiyomi Transindo">
+                <a href="#" class="text-2xl font-bold tracking-tight">
+                    <span class="text-slate-900">Kiyomi </span><span class="text-brand">Transindo</span>
+                </a>
+            </div>
+
+            <ul class="absolute left-1/2 -translate-x-1/2 hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <li><a href="#" class="hover:text-cyan-500 transition-colors">Home</a></li>
+                <li><a href="#about" class="hover:text-cyan-500 transition-colors">Tentang</a></li>
+                <li><a href="#services" class="hover:text-cyan-500 transition-colors">Layanan</a></li>
+                <li><a href="#facilities" class="hover:text-cyan-500 transition-colors">Fasilitas</a></li>
+                <li><a href="#footer" class="hover:text-cyan-500 transition-colors">Kontak</a></li>
+            </ul>
+
+            <a href="https://wa.me/+6282325049996" class="relative group">
+                <div class="absolute inset-0 bg-cyan-400 blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                <div class="relative bg-gradient-to-r from-slate-200 to-white px-6 py-2 transform -skew-x-12 border border-white shadow-lg group-hover:scale-105 transition duration-300">
+                    <span class="block transform skew-x-12 text-xs font-bold text-black tracking-wider">HUBUNGI KAMI</span>
+                </div>
+            </a>
+
+        </nav>
+    </div>
+
+    <header class="relative h-screen min-h-[800px] w-full bg-hero-gradient overflow-hidden flex flex-col justify-center">
+        
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+            <h1 class="text-[15vw] font-orbitron font-black text-white tracking-tighter opacity-40 mix-blend-overlay">
+                KIYOMI
+            </h1>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 h-full items-center">
+            
+            <div class="md:col-span-12 absolute inset-0 md:relative md:h-full flex items-center justify-center md:justify-end">
+                <img src="C:\Users\AKBAR\Pictures\PROJECT WEB\Gemini_Generated_Image_tt09bxtt09bxtt09-Photoroom.png" 
+                     alt="Luxury Bus" 
+                     class="w-full max-w-5xl object-contain drop-shadow-2xl md:translate-x-20 mix-blend-darken filter contrast-125 brightness-110">
+            </div>
+
+            <div class="absolute bottom-20 left-6 md:left-12 max-w-lg z-20">
+                <h2 class="text-4xl md:text-6xl font-orbitron font-bold text-slate-900 leading-tight mb-8">
+                    NIKMATI <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">WISATA IMPIAN</span> <br>
+                    ANDA HARI INI
+                </h2>
+                
+                <div class="flex items-center gap-6">
+<a href="https://wa.me/+6282325049996">
+                    <button class="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold hover:bg-cyan-500 hover:text-black transition-all duration-300 shadow-xl text-sm tracking-wide">
+                        BOOKING SEKARANG
+                    </button>
+</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="w-full bg-white flex justify-center py-10 relative z-20">
+        <div class="w-11/12 md:w-3/4 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+    </div>
+    <section id="about" class="bg-white pb-40 pt-40 px-6 md:px-12 relative">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="font-orbitron text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+                        TENTANG <span class="text-cyan-500">KAMI</span>
+                    </h3>
+                    <div class="w-20 h-1 bg-cyan-500 mb-8"></div>
+                    
+                    <p class="text-slate-600 leading-relaxed mb-6 text-lg">
+                        <strong>Kiyomi Transindo</strong> adalah penyedia jasa transportasi wisata yang berasal dari Paninggaran, Pekalongan. Melalui motto <strong>"With Heart and Heritage"</strong>, kami menawarkan pengalaman perjalanan yang berbeda. Pelayanan hangat layaknya keluarga dan rute wisata yang kaya akan nilai budaya. Jelajahi keindahan nusantara dengan kenyamanan maksimal bersama kami.
+                    </p>                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="absolute inset-0 bg-cyan-500 transform rotate-3 rounded-2xl opacity-20"></div>
+                    <img src="C:\Users\AKBAR\Pictures\PROJECT WEB\SnapInsta.to_491470114_17884160706260374_8602476098390917206_n.jpg" 
+                         alt="Tentang Kami Bus" 
+                         class="relative rounded-2xl shadow-2xl w-full object-cover h-[400px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-navy-900 py-40 px-6 md:px-12 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div class="absolute top-1/4 right-0 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-[150px] opacity-10"></div>
+
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h3 class="font-orbitron text-3xl md:text-5xl font-bold text-white mb-4">LAYANAN KAMI</h3>
+                <p class="text-cyan-400 text-sm tracking-[0.2em] uppercase">Kenyamanan & Kepercayaan Anda Prioritas Kami</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/10 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold mb-6 group-hover:bg-cyan-500 group-hover:text-black transition-colors">1</div>
+                    <h4 class="font-orbitron text-xl font-bold text-white mb-3">Armada TBerkualitas</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Memprioritaskan kenyamanan Anda dengan unit berkualitas dan menggunakan mesin Hino.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/10 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold mb-6 group-hover:bg-cyan-500 group-hover:text-black transition-colors">2</div>
+                    <h4 class="font-orbitron text-xl font-bold text-white mb-3">Harga Sesuai Mutu</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Kami memberikan harga terbaik, sesuai dengan mutu dan kualitas yang kami berikan untuk Anda. Dapatkan harga promo terbaik.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/10 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold mb-6 group-hover:bg-cyan-500 group-hover:text-black transition-colors">3</div>
+                    <h4 class="font-orbitron text-xl font-bold text-white mb-3">Interior Mewah & Fasilitas</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Fasilitas sangat lengkap mulai dari AC, DVD & Karaoke, Audio, LED TV, USB Port, Reclining Seat, Wifi, Bantal dan Selimut.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/10 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold mb-6 group-hover:bg-cyan-500 group-hover:text-black transition-colors">4</div>
+                    <h4 class="font-orbitron text-xl font-bold text-white mb-3">Kebersihan & Kenyamanan</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Kepuasan pelanggan adalah prioritas utama. Kami akan merespon dengan cepat setiap pesanan Anda dengan pelayanan terbaik.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/10 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold mb-6 group-hover:bg-cyan-500 group-hover:text-black transition-colors">5</div>
+                    <h4 class="font-orbitron text-xl font-bold text-white mb-3">Pengemudi Ramah</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Kami memiliki Pengemudi yang handal, ramah serta profesional. Driver berpengalaman melayani Anda dengan sepenuh hati.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-8 hover:bg-white/10 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold mb-6 group-hover:bg-cyan-500 group-hover:text-black transition-colors">6</div>
+                    <h4 class="font-orbitron text-xl font-bold text-white mb-3">Perawatan Berkala</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Berkomitmen memberikan pengalaman perjalanan terbaik. Setiap kendaraan selalu mendapat perawatan rutin dan lolos uji kelayakan.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities" class="bg-slate-50 py-40 px-6 md:px-12 relative">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="font-orbitron text-3xl md:text-5xl font-bold text-slate-900 mb-4">FASILITAS LENGKAP</h3>
+                <div class="w-24 h-1 bg-cyan-500 mx-auto"></div>
+                <p class="mt-6 text-slate-600 max-w-2xl mx-auto">
+                    Kendaraan yang tersedia sudah dilengkapi dengan fasilitas lengkap dan menarik untuk memastikan performa terbaik dan kenyamanan Anda.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-navy-900 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-cyan-500 rounded-full opacity-10 blur-3xl"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 relative z-10">
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-tv text-cyan-400 w-6"></i><span>LED TV</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-music text-cyan-400 w-6"></i><span>Audio System</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-lightbulb text-cyan-400 w-6"></i><span>Reading Lamp</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-chair text-cyan-400 w-6"></i><span>Arm Rest</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-microphone-lines text-cyan-400 w-6"></i><span>Wireless Mic</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-bolt text-cyan-400 w-6"></i><span>Port USB Charger</span>
+                        </li>
+                         <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-mattress-pillow text-cyan-400 w-6"></i><span>Bantal & Selimut</span>
+                        </li>
+                    </ul>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-wind text-cyan-400 w-6"></i><span>AC Louver</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-compact-disc text-cyan-400 w-6"></i><span>DVD & Karaoke</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-couch text-cyan-400 w-6"></i><span>Reclining Seats</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-map-location-dot text-cyan-400 w-6"></i><span>GPS System</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-wifi text-cyan-400 w-6"></i><span>Wifi Onboard</span>
+                        </li>
+                        <li class="flex items-center text-white space-x-3">
+                            <i class="fa-solid fa-snowflake text-cyan-400 w-6"></i><span>Cool Box</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="bg-white py-24 px-6 md:px-12 relative">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="font-orbitron text-3xl md:text-5xl font-bold text-slate-900 mb-12">TESTIMONIAL</h3>
+            
+            <div class="relative bg-slate-50 p-10 rounded-2xl shadow-lg border border-slate-100">
+                <i class="fa-solid fa-quote-left text-4xl text-cyan-500/30 absolute top-8 left-8"></i>
+                
+                <p class="text-slate-600 text-lg md:text-xl italic leading-relaxed mb-8 relative z-10 px-4">
+                    "Kalo pengalamanku sama Kiyomi Transindo tuh berkesan banget sih. Mereka pasti beri layanan terbaik, berkualitas, dan premium. Aku bakal rekomendasiin ke siapa aja yang lagi nyari bus pariwisata nyaman plus bagus."
+                </p>
+                
+                <div class="border-t border-slate-200 pt-6">
+                    <h4 class="font-orbitron font-bold text-slate-900 text-xl">Putri Ayu</h4>
+                    <p class="text-blue-500 text-sm">Customer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-black text-white pt-20 pb-10 border-t border-slate-800">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <div>
+                    <h4 class="font-orbitron text-2xl font-bold text-cyan-500 mb-6">Kiyomi Transindo</h4>
+                    <p class="text-slate-400 mb-8 max-w-sm">
+                        Jl.Raya Linggoasri, Desa Tenogo, Kec. Paninggaran, Kabupaten Pekalongan, Jawa Tengah 51164
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div>
+                            <p class="text-white font-bold mb-1">Jam Operasional</p>
+                            <p class="text-slate-400 text-sm">Senin - Sabtu : 7 am - 9 pm</p>
+                            <p class="text-slate-400 text-sm">Minggu : 9 am - 5 pm</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase tracking-widest mb-2">Call Center</p>
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-phone text-cyan-500 text-xs"></i><span class="text-sm">0823 2504 9996</span>
+                            </div>
+                        </div>
+                        <div>
+                             <p class="text-xs text-slate-500 uppercase tracking-widest mb-2">Marketing (WA)</p>
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fa-brands fa-whatsapp text-green-500 text-xs"></i><span class="text-sm">0823 2504 9996</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <p class="text-xs text-slate-500 uppercase tracking-widest mb-2">Email Us On</p>
+                        <a href="mailto:mdelonix@gmail.com" class="text-white-400 hover:text-grey transition-colors">
+                            <i class="fa-solid fa-envelope"></i> mdelonix@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative h-64 md:h-auto rounded-2xl overflow-hidden border border-slate-800">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.757201607798!2d109.58881201355443!3d-7.122659293515066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e701d381122b92b%3A0xac13dccb01a266da!2sMamen%20Trans!5e0!3m2!1sen!2sid!4v1764440471662!5m2!1sen!2sid" 
+ 
+                         class="w-full h-full object-cover opacity-60 hover:opacity-100 transition duration-500 grayscale hover:grayscale-0" alt="Map Location"></iframe>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-900 mt-16 pt-8 text-center text-slate-600 text-sm">
+                &copy; 2025 Kiyomi Transindo. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
