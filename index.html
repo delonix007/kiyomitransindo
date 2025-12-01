@@ -101,23 +101,23 @@
         </nav>
     </div>
 
-    <header class="relative h-screen min-h-[800px] w-full bg-hero-gradient overflow-hidden flex flex-col justify-center">
+    <header class="relative w-full bg-hero-gradient overflow-hidden flex flex-col justify-start md:justify-center h-auto pt-40 pb-10 md:pt-0 md:pb-0 md:h-screen md:min-h-[800px]">
         
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
-            <h1 class="text-[15vw] font-orbitron font-black text-white tracking-tighter opacity-40 mix-blend-overlay">
+        <div class="absolute inset-0 flex items-start pt-32 md:items-center md:pt-0 justify-center pointer-events-none select-none z-0">
+            <h1 class="text-[25vw] md:text-[15vw] font-orbitron font-black text-white tracking-tighter opacity-40 mix-blend-overlay">
                 KIYOMI
             </h1>
         </div>
 
         <div class="relative z-10 container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 h-full items-center">
             
-            <div class="md:col-span-12 absolute inset-0 md:relative md:h-full flex items-center justify-center md:justify-end">
+            <div class="col-span-12 relative md:h-full flex items-start md:items-center justify-center md:justify-end">
                 <img src="https://raw.githubusercontent.com/delonix007/kiyomitransindo/refs/heads/main/kiyomitransindo_transparent.png" 
                      alt="Luxury Bus" 
-                     class="w-full max-w-5xl object-contain drop-shadow-2xl md:translate-x-20 mix-blend-darken filter contrast-125 brightness-110">
+                     class="w-full max-w-5xl object-contain drop-shadow-2xl md:translate-x-20 mix-blend-darken filter contrast-125 brightness-110 scale-110 md:scale-100 origin-bottom">
             </div>
 
-            <div class="absolute bottom-20 left-6 md:left-12 max-w-lg z-20">
+            <div class="relative md:absolute md:bottom-20 left-0 md:left-12 max-w-lg z-20 mt-6 md:mt-0 mb-8 md:mb-0">
                 <h2 class="text-4xl md:text-6xl font-orbitron font-bold text-slate-900 leading-tight mb-8">
                     NIKMATI <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">WISATA IMPIAN</span> <br>
@@ -125,20 +125,21 @@
                 </h2>
                 
                 <div class="flex items-center gap-6">
-<a href="https://wa.me/+6282325049996">
-                    <button class="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold hover:bg-cyan-500 hover:text-black transition-all duration-300 shadow-xl text-sm tracking-wide">
-                        BOOKING SEKARANG
-                    </button>
-</a>
+                    <a href="https://wa.me/+6282325049996">
+                        <button class="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold hover:bg-cyan-500 hover:text-black transition-all duration-300 shadow-xl text-sm tracking-wide">
+                            BOOKING SEKARANG
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="w-full bg-white flex justify-center py-10 relative z-20">
+    <div class="w-full bg-white flex justify-center py-8 md:py-10 relative z-20">
         <div class="w-11/12 md:w-3/4 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
     </div>
-    <section id="about" class="bg-white pb-40 pt-40 px-6 md:px-12 relative">
+    
+    <section id="about" class="bg-white pb-40 pt-16 md:pt-40 px-6 md:px-12 relative">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
@@ -354,7 +355,7 @@
             </div>
 
             <div class="border-t border-slate-900 mt-16 pt-8 text-center text-slate-600 text-sm">
-                &copy; 2025 Kiyomi Transindo. All Rights Reserved.
+                © 2025 Kiyomi Transindo. All Rights Reserved.
             </div>
         </div>
     </footer>
@@ -362,13 +363,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
