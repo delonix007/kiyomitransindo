@@ -37,14 +37,13 @@
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'marquee': 'marquee 40s linear infinite', // Kecepatan disesuaikan agar smooth
+                        'marquee': 'marquee 40s linear infinite', 
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-20px)' },
                         },
-                        // UPDATED: Logika Seamless Loop
                         marquee: {
                             '0%': { transform: 'translateX(0%)' },
                             '100%': { transform: 'translateX(-100%)' },
@@ -72,6 +71,11 @@
         ::-webkit-scrollbar-thumb {
             background: #22D3EE;
             border-radius: 4px;
+        }
+
+        /* Transisi halus untuk slide */
+        .carousel-item {
+            transition: opacity 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -140,24 +144,9 @@
     </header>
 
     <div class="w-full bg-navy-900 border-y-2 border-cyan-500/50 relative z-30 overflow-hidden h-14 flex items-center shadow-2xl">
-        
-
-
         <div class="flex items-center overflow-hidden w-full mask-linear">
             
             <div class="animate-marquee whitespace-nowrap flex items-center shrink-0 min-w-full gap-16 pr-16 text-slate-300 font-mono text-xs md:text-sm tracking-wide pl-40 md:pl-48">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-bus text-cyan-400"></i>
-                    <span class="text-cyan-400 font-bold">[BUS 01]</span>
-                    <span>-</span>
-                    <span class="text-red-400 text-[10px] border border-red-500/50 px-1.5 py-0.5 rounded bg-red-500/10">EMPTY TRIP</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-warehouse text-purple-400"></i>
-                    <span class="text-cyan-400 font-bold">[BUS 01]</span>
-                    <span>Ready di Garasi Pekalongan</span>
-                    <span class="text-green-400 text-[10px] border border-green-500/50 px-1.5 py-0.5 rounded bg-green-500/10">AVAILABLE</span>
-                </div>
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-bus text-cyan-400"></i>
                     <span class="text-cyan-400 font-bold">[BUS 01]</span>
@@ -209,26 +198,15 @@
                     <span>Ready di Garasi Pekalongan</span>
                     <span class="text-green-400 text-[10px] border border-green-500/50 px-1.5 py-0.5 rounded bg-green-500/10">AVAILABLE</span>
                 </div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-bus text-cyan-400"></i>
-                    <span class="text-cyan-400 font-bold">[BUS 01]</span>
-                    <span>-</span>
-                    <span class="text-red-400 text-[10px] border border-red-500/50 px-1.5 py-0.5 rounded bg-red-500/10">EMPTY TRIP</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-warehouse text-purple-400"></i>
-                    <span class="text-cyan-400 font-bold">[BUS 01]</span>
-                    <span>Ready di Garasi Pekalongan</span>
-                    <span class="text-green-400 text-[10px] border border-green-500/50 px-1.5 py-0.5 rounded bg-green-500/10">AVAILABLE</span>
-                </div>
             </div>
-
         </div>
     </div>
+    
     <section id="about" class="bg-slate-50 border-t border-slate-200 pb-10 md:pb-40 pt-16 md:pt-40 px-6 md:px-12 relative">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
+                
+                <div class="md:w-1/2 order-1 md:order-1">
                     <h3 class="font-orbitron text-3xl md:text-5xl font-bold text-slate-900 mb-6">
                         TENTANG <span class="text-cyan-500">KAMI</span>
                     </h3>
@@ -236,12 +214,45 @@
                     
                     <p class="mt-6 text-slate-600 max-w-2xl mx-auto">
                         <strong>Kiyomi Transindo</strong> adalah penyedia jasa transportasi wisata yang berasal dari Paninggaran, Pekalongan. Melalui motto <strong>"With Heart and Heritage"</strong>, kami menawarkan pengalaman perjalanan yang berbeda. Pelayanan hangat layaknya keluarga dan rute wisata yang kaya akan nilai budaya. Jelajahi keindahan nusantara dengan kenyamanan maksimal bersama kami.
-                    </p>                </div>
-                <div class="md:w-1/2 relative">
-                    <div class="absolute inset-0 bg-cyan-500 transform rotate-3 rounded-2xl opacity-20"></div>
-                    <img src="https://raw.githubusercontent.com/delonix007/kiyomitransindo/refs/heads/main/about.jpg" 
-                         alt="Tentang Kami Bus" 
-                         class="relative rounded-2xl shadow-2xl w-full object-cover h-[400px]">
+                    </p>
+                </div>
+                
+                <div class="md:w-1/2 w-full relative flex justify-center items-center group order-2 md:order-2 mt-8 md:mt-0">
+                    <div class="relative w-full max-w-[300px] md:max-w-[360px] mx-auto"> 
+                        
+                        <div class="hidden md:block absolute inset-0 bg-cyan-500 transform rotate-3 rounded-2xl opacity-20"></div>
+                        
+                        <div id="carouselWrapper" class="relative w-full aspect-[9/16] bg-black rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
+                            
+                            <video class="carousel-item absolute inset-0 object-cover w-full h-full opacity-100 z-10" 
+                                   muted loop playsinline autoplay
+                                   poster="https://raw.githubusercontent.com/delonix007/kiyomitransindo/refs/heads/main/kiyo1.png?q=80&w=2670&auto=format&fit=crop">
+                                <source src="https://github.com/delonix007/kiyomitransindo/raw/refs/heads/main/kiyo1.mp4" type="video/mp4">
+                            </video>
+
+                            <img src="https://raw.githubusercontent.com/delonix007/kiyomitransindo/refs/heads/main/kiyo2.jpg?q=80&w=2670&auto=format&fit=crop" 
+                                 class="carousel-item absolute inset-0 object-cover w-full h-full opacity-0 z-0" 
+                                 alt="Bus Interior">
+                                 
+                            <video class="carousel-item absolute inset-0 object-cover w-full h-full opacity-0 z-0" 
+                                   muted loop playsinline
+                                   poster="https://raw.githubusercontent.com/delonix007/kiyomitransindo/refs/heads/main/kiyo3.png&auto=format&fit=crop">
+                                <source src="https://github.com/delonix007/kiyomitransindo/raw/refs/heads/main/kiyo3.mp4" type="video/mp4">
+                            </video>
+                            
+                            <div class="absolute inset-0 pointer-events-none z-20 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+
+                        </div>
+
+                        <button id="prevBtn" class="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-cyan-500 text-white border border-white/30 p-2 h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full backdrop-blur-md transition-all z-30 shadow-lg cursor-pointer">
+                            <i class="fa-solid fa-chevron-left text-sm md:text-base"></i>
+                        </button>
+                        
+                        <button id="nextBtn" class="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-cyan-500 text-white border border-white/30 p-2 h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full backdrop-blur-md transition-all z-30 shadow-lg cursor-pointer">
+                            <i class="fa-solid fa-chevron-right text-sm md:text-base"></i>
+                        </button>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -444,14 +455,79 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const items = document.querySelectorAll('.carousel-item');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const carouselWrapper = document.getElementById('carouselWrapper');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                // Logic looping
+                if (index < 0) { 
+                    currentIndex = items.length - 1; 
+                } else if (index >= items.length) { 
+                    currentIndex = 0; 
+                } else { 
+                    currentIndex = index; 
+                }
+
+                items.forEach((item, idx) => {
+                    if (idx === currentIndex) {
+                        item.classList.remove('opacity-0', 'z-0');
+                        item.classList.add('opacity-100', 'z-10');
+                    } else {
+                        item.classList.remove('opacity-100', 'z-10');
+                        item.classList.add('opacity-0', 'z-0');
+                        
+                        // Pause video jika disembunyikan
+                        if (item.tagName === 'VIDEO') {
+                            item.pause();
+                            item.currentTime = 0; 
+                        }
+                    }
+                });
+                
+                checkAndPlayActiveVideo();
+            }
+
+            // Event Listeners Tombol
+            prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+            nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+            // Fungsi Autoplay Video
+            function checkAndPlayActiveVideo() {
+                const activeItem = items[currentIndex];
+                if (activeItem.tagName === 'VIDEO') {
+                     activeItem.play().catch(e => console.log("Video play prevented (browser policy)."));
+                }
+            }
+            
+            // Observer: Pause video kalau di-scroll jauh (biar hemat baterai HP)
+            const observerOptions = {
+                root: null,
+                threshold: 0.5 
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const activeItem = items[currentIndex];
+                    if (entry.target === carouselWrapper && activeItem.tagName === 'VIDEO') {
+                        if (entry.isIntersecting) {
+                             activeItem.play().catch(e => {});
+                        } else {
+                             activeItem.pause();
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            if (carouselWrapper) {
+                 observer.observe(carouselWrapper);
+            }
+        });
+    </script>
+
 </body>
-
 </html>
-
-
-
-
-
-
-
-
